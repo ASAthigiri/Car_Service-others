@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jobs List</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      
+       @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+*{
+ font-family: 'Tilt Neon', cursive;
+}
+   body {
+		background: rgb(144,46,109);
+background: linear-gradient(291deg, rgba(144,46,109,1) 0%, rgba(101,77,213,1) 46%);
+      background-size:400% 400%;
+  animation:gradient 15s ease infinite;
+  height:100vh;
+		}
+@keyframes gradient{
+
+  0%{
+    background-position: 0% 50%;
+      }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+
+.card {
+	border: none;
+  height: 180px;
+  width: 300px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.card-text {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+    </style>
+</head>
+<body>
+   <form action="/servicejob" method="post">
+	<div class="container mt-5">
+		<h1 class="text-center mb-5" style="color: white;">Jobs List</h1>
+		<div class="row">
+				
+				
+						<%for(let i = 0; i<name.length; i++){%>
+							
+									<div class="col-md-4 mb-4">
+							<div class="card">
+							<div class="card-body">
+						<h5 class="card-title" id="name"><%= name[i].name %></h5>
+						<p class="card-text 1"><%= email[i].email %></p>
+						<p class="card-text 2"><%=address[i].address %></p>
+						
+						<a href="yourserjob" class="btn btn-primary">select Job</a>
+					</div>
+				</div>
+			</div>
+						<%}%>
+						
+					
+				
+			
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</form> 
+</body>
+</html>

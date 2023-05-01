@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Service Booking Form</title>
+	<style>
+     @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+*{
+ font-family: 'Tilt Neon', cursive;
+}
+   body {
+		background: rgb(144,46,109);
+     
+background: linear-gradient(291deg, rgba(144,46,109,1) 0%, rgba(101,77,213,1) 46%);
+      background-size:400% 400%;
+  animation:gradient 15s ease infinite;
+  height:100vh;
+		}
+@keyframes gradient{
+
+  0%{
+    background-position: 0% 50%;
+      }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+		form {
+			background-color: #f2f2f2;
+			padding: 20px;
+			border-radius: 10px;
+			max-width: 500px;
+			margin: 0 auto;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			text-align: center;
+			margin-bottom: 30px;
+			color: #333;
+		}
+		label {
+			display: block;
+			margin-bottom: 8px;
+			color: #333;
+			font-weight: bold;
+		}
+		input[type="text"], select {
+			width: 100%;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			font-size: 16px;
+			color: #333;
+			background-color: white;
+			box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+		}
+		input[type="submit"] {
+       width:500px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 12px 20px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			transition: background-color 0.3s ease-in-out;
+		}
+		input[type="submit"]:hover {
+			background-color: #555;
+		}
+	</style>
+</head>
+<body>
+  
+	<form action="/carService" method="POST">
+			<h1 >Book a Car Service</h1>
+    <hr>
+    <br>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" placeholder="Enter your name" required>
+			
+			<label for="email">Email:</label>
+			<input type="text" id="email" name="email" placeholder="Enter your email" required>
+			
+			<label for="phone">Phone:</label>
+			<input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+			
+			<label for="car">Car:</label>
+			<select id="car" name="car" required>
+				<option value="" selected disabled>Select your car</option>
+				<option value="honda">Honda</option>
+				<option value="toyota">Toyota</option>
+				<option value="ford">Ford</option>
+				<option value="nissan">Nissan</option>
+			</select>
+			
+			<label for="service">Service:</label>
+			<select id="service" name="service" required>
+				<option value="" selected disabled>Select your service</option>
+				<option value="oil_change">Oil Change</option>
+				<option value="brake_repair">Brake Repair</option>
+				<option value="tire_rotation">Tire Rotation</option>
+				<option value="other">Other</option>
+			</select>
+			<label for="address">address:</label>
+            <textarea name="address" id="address" cols="5" rows="5" style="height: 80; width: 500px; ;"></textarea>
+            
+
+
+
+			<label for="date">Date:</label>
+			<input type="date" id="date" name="date" required>
+			<br>
+    <br>
+			<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
